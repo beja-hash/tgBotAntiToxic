@@ -2,3 +2,4 @@ aiogram
 transformers
 torch
 python-dotenv
+pandas
