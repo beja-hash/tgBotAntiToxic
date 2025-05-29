@@ -1,7 +1,7 @@
 import os
 from aiogram import Bot, Dispatcher
-from aiogram.types import Message
-from aiogram.filters import CommandStart
+from aiogram.types import Message, BotCommand
+from aiogram.filters import CommandStart, Command
 from aiogram.enums import ParseMode
 from aiogram import F
 from dotenv import load_dotenv
@@ -32,13 +32,15 @@ async def handle_message(message: Message):
         try:
             await message.delete()
         except:
-            await message.reply("❗ Не могу удалить сообщение — проверь права администратора.")
+            await message.reply("Не могу удалить сообщение — проверь права администратора.")
     else:
-        print(f'✅ Сообщение безопасное: {message.text}')
+        print(f'Сообщение безопасное: {message.text}')
+
 
 
 async def main():
-    await dp.start_polling(bot)
+    await dp.start_polling(bot)    
+       
 
 if __name__ =='__main__':
     import asyncio
